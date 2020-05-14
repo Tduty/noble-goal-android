@@ -8,7 +8,7 @@
 
         <variable
             name="viewModel"
-            type="info.tduty.noble_goal.login.LoginViewModel" />
+            type="info.tduty.noble_goal.view.login.LoginViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

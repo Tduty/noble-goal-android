@@ -1,10 +1,11 @@
-package info.tduty.noble_goal.login
+package info.tduty.noble_goal.view.login
 
 import android.app.Application
-import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
+import info.tduty.noble_goal.data.LoginResponse
+import info.tduty.noble_goal.repository.LoginRepository
 
 /**
  * Created by Evgeniy Mezentsev on 13.05.2020.
@@ -16,13 +17,20 @@ class LoginViewModel(
 
     val isProcessLogin = !token.isNullOrBlank()
     val actionSignWithTelegram = MutableLiveData<Boolean>()
+    val loginWithTelegram = MutableLiveData<LoginResponse>()
+
+    init {
+        login()
+    }
 
     fun openTelegram() {
         actionSignWithTelegram.value = true
     }
 
     fun login() {
-        val t = token
+        if (!token.isNullOrBlank()) {
+            LoginRepository.loginWithTelegram(loginWithTelegram, token)
+        }
     }
 }
 

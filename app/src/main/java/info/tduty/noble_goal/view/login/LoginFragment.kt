@@ -1,4 +1,4 @@
-package info.tduty.noble_goal.login
+package info.tduty.noble_goal.view.login
 
 import android.content.Context
 import android.content.Intent
@@ -61,6 +61,9 @@ class LoginFragment : Fragment() {
     private fun setupObservers() {
         val lifecycleOwner = binding.lifecycleOwner ?: return
         viewModel.actionSignWithTelegram.observe(lifecycleOwner, Observer { openTelegram() })
+        viewModel.loginWithTelegram.observe(lifecycleOwner, Observer {
+            Toast.makeText(requireContext(), "Login with telegram", Toast.LENGTH_LONG).show()
+        })
     }
 
     private fun openTelegram() {
