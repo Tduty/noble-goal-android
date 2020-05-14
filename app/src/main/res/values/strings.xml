@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">Noble Goal</string>
+
+    <string name="sing_in_telegram">Sing in with telegram</string>
 </resources>

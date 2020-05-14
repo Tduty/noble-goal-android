@@ -9,6 +9,10 @@
         android:name="info.tduty.noble_goal.login.LoginFragment"
         android:label="LoginFragment"
         tools:layout="@layout/fragment_login">
+        <argument
+            android:name="token"
+            android:defaultValue=" "
+            app:argType="string" />
         <action
             android:id="@+id/action_loginFragment_to_mainFragment"
             app:destination="@id/mainFragment" />
